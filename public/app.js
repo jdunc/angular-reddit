@@ -7,28 +7,30 @@
         .component('reddit', {
             controller: function() {
                 const vm = this;
+                vm.filter = '';
                 vm.$onInit = function() {
                     vm.showPost = true;
                     vm.sortBy = "date";
                     // Test post.
-                    vm.posts = [{
-                        title: "TITLE",
-                        author: "AUTHOR",
-                        body: "SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT",
-                        date: new Date(),
-                        score: 100,
-                        showComments: true,
-                        comments: ['FIRST COMMENT', 'SECOND COMMENT']
-                    }];
+                    vm.posts = [
+                    //   {
+                    //     title: "TITLE",
+                    //     author: "AUTHOR",
+                    //     body: "SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT, SAMPLE TEXT",
+                    //     date: new Date(),
+                    //     score: 100,
+                    //     showComments: true,
+                    //     comments: ['FIRST COMMENT', 'SECOND COMMENT']
+                    // }
+                  ];
                     console.log('Angular Initialized.');
-
                     // Check when all posts were created ~60 seconds.
                     (function counter() {
                         vm.checkTime();
                         setTimeout(counter, 60000);
                     })();
                 };
-                
+
                 // $scope.reverse = true;
                 //     $scope.sortBy = function(postOrder) {
                 //         $scope.reverse = ($scope.postOrder === postOrder) ? !$scope.reverse : false;
